@@ -1,0 +1,98 @@
+$main-red:#FF4B00;
+$color-white:#fff;
+$poportion:75;
+// px to rems
+@function pxToRem($px) {
+	@return $px / $poportion * 1rem;
+}
+
+%oh{overflow: hidden;}
+%bg_white{background-color: white;}
+%my_box_bottom{background-color: white;border-bottom:solid 1px #EEEEEE;}
+%fl {  float: left;}
+%fr {  float: right;}
+%marginAuto {  margin: 0 auto;}
+%hide {  display: none;}
+
+%ellipsis{overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+%clamp{display: -webkit-box;/* autoprefixer: off*/-webkit-box-orient: vertical;/* autoprefixer: on*/-webkit-line-clamp: 2;overflow: hidden;}
+@mixin wH($w:50,$h:50) {
+  width: $w;
+  height: $h;
+}
+@mixin bgc($url) {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image:url($url);
+}
+@mixin b_radius($size) {
+  border-radius: $size;
+  -webkit-border-radius:$size;
+  -moz-border-radius: $size;
+}
+
+%bg-gray{background-color: #eeeeee;}
+@mixin bg_img($url,$w,$h,$x,$y) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  width:$w;
+  height:$h;
+  background-size: contain;
+  background-position:$x $y;
+}
+
+%icon{
+  display: inline-block;
+  // background-image: url("../images/icon/bg-merge.png");
+  background-size:pxToRem(1000) pxToRem(640);
+  background-repeat: no-repeat;
+}
+@mixin l_height($height) {
+  height: $height;
+  line-height: $height;
+}
+@mixin boder_direction($direction,$color) {
+  @if $direction==none{
+    border:pxToRem(1) solid $color;
+  }@else{
+    border-#{$direction}:pxToRem(1) solid $color;
+  }
+}
+
+@mixin fontSize($size:18){
+  font-size:pxToRem($size);
+}
+
+@mixin before_line($color:#ddd){
+  content: ' '; display: inline-block; height:1px;border:none;border-bottom:1px solid $color
+}
+
+
+@mixin b_radius($size) {
+	border-radius: $size;
+	-webkit-border-radius:$size;
+	-moz-border-radius: $size;  
+}	
+
+@mixin bgc($url) {
+  background-size: 100% 100%;
+  background-image: url($url);
+  background-repeat: no-repeat;
+}
+
+
+// 特殊节日显示的样式
+// 节日图片置顶
+.jieri_img_top {
+	position: absolute;
+	display: block;
+	top: 0;
+  width: 100%;
+  }
+// 节日图片置底
+.jieri_img_bottom {
+position: absolute;
+display: block;
+bottom: 0;
+width: 100%;
+}
