@@ -4,7 +4,7 @@
 import axios from 'axios';
 import qs from 'qs';
 import config from './config.js'
-//默认请求地址 ：如果有用vue配置跨域的话，那么就要做个判断 开发环境下，baseURL要为 ‘/’
+//默认请求地址 ：如果有用vue配置跨域的话，那么就要做个判断 开发环境下，baseURL要为跨域所配置的东西，例如 ‘/’或者 '/api'等等
 axios.defaults.baseURL = config.baseURL
 // 请求超时时间
 axios.defaults.timeout = 10000;
