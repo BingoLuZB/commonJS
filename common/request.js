@@ -163,7 +163,7 @@ setResponseInterceptor(
 function methodAxios(method, url, params, devConfig = {}, selfConfig = {}) {
     const todoType = ['showLoading', 'needLogin']
     for (let i in defaultConfig) {
-        const {
+        let {
             flag,
             fun
         } = defaultConfig[i]
@@ -202,7 +202,8 @@ function methodAxios(method, url, params, devConfig = {}, selfConfig = {}) {
 
 
 const requerstObj = {
-    get: (url, params, devConfig, selfConfig) => methodAxios('GET', url, params, devConfig, selfConfig),
+    get: (url, params, devConfig, selfConfig) => 
+('GET', url, params, devConfig, selfConfig),
     post: (url, params, devConfig, selfConfig) => methodAxios('POST', url, params, devConfig, selfConfig),
     put: (url, params, devConfig, selfConfig) => methodAxios('PUT', url, params, devConfig, selfConfig),
     delete: (url, params, devConfig, selfConfig) => methodAxios('DELETE', url, params, devConfig, selfConfig),
