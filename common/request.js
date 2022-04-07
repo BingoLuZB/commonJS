@@ -92,7 +92,7 @@ setRequestInterceptor(
     config => {
         const {
             flag
-        } = defaultConfig.repeatCancel.flag
+        } = defaultConfig.repeatCancel
         config.headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
             // 'X-Requested-With': 'XMLHttpRequest'
